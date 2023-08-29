@@ -1,5 +1,5 @@
 #include "StackADT.hpp"
-#include <iostream>
+#include <string>
 #include <cstdlib>
 StackADT::StackADT()
 {
@@ -9,10 +9,15 @@ StackADT::StackADT()
 }
 StackADT::~StackADT()
 {
-  __top = nullptr;
-  __tail = nullptr;
   size_s = 0;
-  // hacer una for borrando todo
+  Node *aux,*aux1;
+  aux = this->__tail;
+  // hacer una for borrando todo para la limpieza de memoria
+  for(int i = 0; i<this->size_s;i++){
+    aux1 = aux;
+    aux = aux->next;
+    free(aux1);
+  }
 }
 void StackADT::push(element_t element)
 {
@@ -78,7 +83,29 @@ element_t StackADT::pop()
   size_s--;
   return deleted_value;
 }
+bool StackADT::some(element_t value){
+  Node *aux;
+  aux = this->__tail;
+  for(int i = 0; i<this->size_s;i++){
+    if(aux->e == value){
+      return true;
+    }
+    aux = aux->next;
+  }
+  return false;
+}
+int StackADT::find(element_t value){
+  Node *aux;
+  aux = this->__tail;
+  for(int i = 0; i<this->size_s;i++){
+    if(aux->e == value){
+      return i;
+    }
+    aux = aux->next;
+  }
+  return -1;
 
+}
 element_t* StackADT::data(){
   Node *aux;
   aux = this->__tail;

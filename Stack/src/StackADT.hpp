@@ -1,5 +1,5 @@
 #include "IStack.hpp"
-
+#include <string>
 struct Node
 {
   element_t e;
@@ -27,4 +27,8 @@ class StackADT : public IStack{
     element_t pop();
     //Retorna un arreglo con todos los elementos de la pila.
     element_t* data();
+    //consulta si el elemento pasado por parametro existe
+    bool some(element_t);
+    //Busca el primer elemento que coincida con el parametro pasado por parametro y retorna la posición y si no lo encuentra retorna -1
+    int find(element_t);
 };

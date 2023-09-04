@@ -9,5 +9,9 @@ class IQueue {
   virtual element_t last() = 0;
   virtual void push(element_t) = 0;
   virtual element_t pop() = 0;
+  virtual element_t* data() = 0;
+  virtual bool some(element_t ) = 0;
+  virtual int find(element_t) = 0;
+  virtual void replaceAll(element_t,element_t) = 0;
 };
 #endif

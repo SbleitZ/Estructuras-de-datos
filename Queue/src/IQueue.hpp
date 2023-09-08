@@ -13,5 +13,6 @@ class IQueue {
   virtual bool some(element_t ) = 0;
   virtual int find(element_t) = 0;
   virtual void replaceAll(element_t,element_t) = 0;
+  virtual element_t at(int) = 0;
 };
 #endif

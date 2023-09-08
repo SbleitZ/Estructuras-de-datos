@@ -24,4 +24,5 @@ class QueueADT : public IQueue{
     bool some(element_t );
     int find(element_t);
     void replaceAll(element_t search_value, element_t replace_value);//Reemplaza todos los elementos que coincidan con el elemento buscado.
+    element_t at(int index);
 };

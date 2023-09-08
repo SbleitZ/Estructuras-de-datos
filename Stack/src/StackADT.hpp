@@ -29,6 +29,6 @@ class StackADT : public IStack{
     element_t* data();
     //consulta si el elemento pasado por parametro existe
     bool some(element_t);
-    //Busca el primer elemento que coincida con el parametro pasado por parametro y retorna la posición y si no lo encuentra retorna -1
+    //Busca el primer elemento que coincida con el valor pasado por parametro y retorna la posición y si no lo encuentra retorna -1
     int find(element_t);
 };
